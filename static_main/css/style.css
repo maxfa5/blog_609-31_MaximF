@@ -1,0 +1,154 @@
+body{
+    
+    display: flex;
+
+    flex-direction: column;
+}
+main{    
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    margin: 0 auto;
+}
+a{margin: 0 auto;}
+
+p {
+    font-size: 24px;
+  }
+
+.aricles {
+    border-radius: 10px;
+    padding: 20px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-style: hidden;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.logo_img{
+    height: 60px;
+    width: 80px;
+    background-image: url(../../media/images/logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.logout_wrapper{
+    
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.login_wrapper{
+    
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.article__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 240px;
+    height: 280px;
+    border-radius: 10px;
+    border-style: hidden;
+    background-color: antiquewhite;
+    margin: 40px;
+    overflow: hidden; /* Скрывает содержимое, выходящее за границы */
+    word-wrap: break-word; /* Перенос длинных слов */
+    overflow-wrap: break-word; /* Альтернатива для word-wrap */
+    hyphens: auto; /* Автоматическая расстановка переносов (если поддерживается) */
+    padding: 10px; /* Добавляем отступы от краев */
+    box-sizing: border-box; /* Учитываем padding в общей ширине */
+}
+.article__item h2{
+    margin: 0 auto;
+}
+
+
+.article__item p {
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Ограничение количества строк */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+h1{
+    text-align: center;
+}
+
+.navBar{
+    align-items: center;
+    background-color: rgb(214, 212, 212);
+    display: flex;
+    flex-direction: row;
+    -ms-flex-align: stretch;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.navigate{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.main_pic{
+    width: 50%;
+    height: auto;
+    align-items: center;
+}
+
+.about_wrapper{
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
+
+.wrapp_info{
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    height: 500px;
+    justify-content: space-between;
+
+}
+
+.text{
+    width: 400px;
+}
+.article-detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.Articels_wrapper{
+    margin-left: 30px;
+    margin-right: 30px;
+}

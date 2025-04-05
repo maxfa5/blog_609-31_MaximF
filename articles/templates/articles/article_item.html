@@ -1,0 +1,11 @@
+{% extends "base_layout.html" %}
+{% block title  %}{{article.title}} {%endblock title %}
+{% block content %}
+    <div class="article-detail">
+        <h1>{{ article.title }}</h1>
+        <div class="wrapp_info">
+            <img class="main_pic" src="{{article.thumbnail.url}}">
+            <p class ="text">{{ article.body }}</p>
+        </div>
+    </div>
+{%endblock content %}

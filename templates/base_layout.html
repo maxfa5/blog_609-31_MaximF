@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Default title {% endblock title %} </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="navBar">
+        <div class="logo">
+            <a href="{% url 'homepage' %}"> <img class="logo_img"></img></a>
+        </div>
+        <div class="navigate">
+            <div class="about_wrapper">
+                <a href="{% url 'about' %}">
+                    <div class="about">about</div>
+                </a>
+            </div>
+            <div class="Articels_wrapper">
+                <a href="{% url 'articles' %}">
+                    <div class="Articels">Articel List</div>
+                </a>
+            </div>
+            
+            <div class="signup">
+                <a href="{% url 'signup' %}">signup</a>
+            </div>
+
+            {% if user.is_authenticated %}
+            <div class="logout_wrapper">
+                <form action="{% url 'logout' %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit">Logout</button>
+                </form>
+            </div>
+            {% else %}
+            <div class="login_wrapper">
+                <a href="{% url 'login' %}">Login</a>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+    {% block content %} {% endblock content %}
+
+
+</body>
+
+</html>

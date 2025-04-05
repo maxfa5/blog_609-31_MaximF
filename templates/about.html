@@ -1,0 +1,8 @@
+{% extends "base_layout.html"    %}
+{% block title  %}Homepage {%endblock title %}
+{% block content %}
+    <h1>{{header}}<h1>
+    <p> Director:  {{director.name}}</p>
+    <p>Address: {{address.0}}, {{address.1}}, {{address.2}}, {{address.3}}</p>
+    <p>Staff: {{staff.0}}, {{staff.1}}, {{staff.2}}</p>
+{% endblock content %}
