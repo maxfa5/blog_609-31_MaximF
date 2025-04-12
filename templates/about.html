@@ -1,8 +1,16 @@
-{% extends "base_layout.html"    %}
+{% extends "base_layout.html"%}
+{% load static %}
 {% block title  %}Homepage {%endblock title %}
 {% block content %}
-    <h1>{{header}}<h1>
-    <p> Director:  {{director.name}}</p>
-    <p>Address: {{address.0}}, {{address.1}}, {{address.2}}, {{address.3}}</p>
-    <p>Staff: {{staff.0}}, {{staff.1}}, {{staff.2}}</p>
+    <h1>{{header}}</h1>
+    <div class="about_us">
+        <div class="about_us_text">
+                <p> Director:  {{director.name}}</p>
+                <p>Address: {{address.0}}, {{address.1}}, {{address.2}}, {{address.3}}</p>
+                <p>Staff: {{staff.0}}, {{staff.1}}, {{staff.2}}</p>
+                <ul class="about_contacts">Сontacts: <li>github: <a href="{{Contacts.0}}">{{Contacts.0}}</a></li><li> Telegram: {{Contacts.1}}</li><li> Phone Number {{Contacts.2}}</li></ul>
+            </div>
+            <div class="logo_img" style="background-image: url('{% static "images/cat.jpg" %}');"></div>
+        </div>
+    </div>
 {% endblock content %}

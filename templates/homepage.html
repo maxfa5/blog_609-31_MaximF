@@ -1,6 +1,21 @@
 {% extends "base_layout.html"    %}
 {% block title  %}Homepage {%endblock title %}
 {% block content %}
-    <h1>{{header}}<h1>
-    <p>{{message}}</p>
+    <h1>{{data.header}}<h1>
+    <p>{{data.message}}</p>
+    <h1>Popularity</h1>
+    <div class="aricles">
+    {% for element in articles %}
+    <div class="article__item">
+        <h2>
+            <a href="{% url 'article_detail' slug=element.slug %}">{{element.title}}</a>
+        </h2>
+        <p>
+            {{element.snippet}}
+            <!-- {{element.body}} -->
+        </p>
+        <time>{{element.date}}</time>
+    </div>
+    {% endfor %}
+    </div>
 {% endblock content %}
