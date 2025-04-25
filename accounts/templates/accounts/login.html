@@ -115,7 +115,7 @@
     <div class="login-container">
         <h1>Login</h1>
         
-        <form class="form" action="/accounts/login/" method="post">
+        <form class="form" action="{% url 'accounts:login' %}" method="post">
             {% csrf_token %}
             
             {% if form.non_field_errors %}
@@ -142,6 +142,9 @@
             {% endfor %}
             
             <button type="submit">Login</button>
+            {% if request.GET.next %}
+            <input type="hidden" name="next" value="{{ request.GET.next }}">
+        {% endif %}
         </form>
         
         <div class="links">

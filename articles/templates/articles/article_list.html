@@ -1,17 +1,21 @@
-{% extends "base_layout.html"    %}
-{% block title  %}Article List {%endblock title %}
+{% extends "base_layout.html" %}
+{% block title %}Article List{% endblock title %}
 {% block content %}
     <main>
         <h1>Article List</h1>
-        <div class="aricles">
+       
+        <a href="{% url 'articles:create_article' %}" class="create_btn btn btn-primary mb-4">
+            <i class="bi bi-plus-circle "></i> Create article
+        </a>
+
+        <div class="articles">
             {% for element in articles %}
             <div class="article__item">
                 <h2>
-                    <a href="{% url 'article_detail' slug=element.slug %}">{{element.title}}</a>
+                    <a href="{% url 'articles:article_detail' slug=element.slug %}">{{element.title}}</a>
                 </h2>
                 <p>
                     {{element.snippet}}
-                    <!-- {{element.body}} -->
                 </p>
                 <time>{{element.date}}</time>
             </div>

@@ -50,6 +50,27 @@ p {
     background-repeat: no-repeat;
     background-size: contain;
 }
+.articles{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.create_btn{
+    margin-top: 20px;
+    
+}
+
+.pic_article{
+    height: 260px;
+    width: 280px;
+    background-image: url(../../media/images/logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin:30px;
+    background-size: contain;
+}
 .logo{
     display: flex;
     flex-direction: column;
