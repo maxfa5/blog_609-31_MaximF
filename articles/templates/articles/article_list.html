@@ -3,11 +3,11 @@
 {% block content %}
     <main>
         <h1>Article List</h1>
-       
+        {% if user.is_authenticated %}
         <a href="{% url 'articles:create_article' %}" class="create_btn btn btn-primary mb-4">
             <i class="bi bi-plus-circle "></i> Create article
         </a>
-
+        {% endif %}
         <div class="articles">
             {% for element in articles %}
             <div class="article__item">
