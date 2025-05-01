@@ -1,11 +1,40 @@
 {% extends "base_layout.html" %}
-{% block title  %}{{article.title}} {%endblock title %}
+{% block title %}{{article.title}}{% endblock title %}
+
 {% block content %}
+<div class="container mt-4">
     <div class="article-detail">
-        <h1>{{ article.title }}</h1>
-        <div class="wrapp_info">
-            <img class="pic_article" src="{{article.thumbnail.url}}">
-            <p class ="text">{{ article.body }}</p>
+        <!-- Заголовок -->
+        <h1 class="text-center mb-4">{{ article.title }}</h1>
+        
+        <!-- Обертка для контента -->
+        <div class="row">
+            <!-- Изображение (полная ширина на мобильных, 4 колонки на десктопе) -->
+            <div class="col-12 col-md-4 mb-4 mb-md-0">
+                <img class="img-fluid rounded" src="{{article.thumbnail.url}}" alt="{{article.title}}">
+            </div>
+            
+            <!-- Текст статьи (полная ширина на мобильных, 8 колонок на десктопе) -->
+            <div class="col-12 col-md-8">
+                <div class="article-body">
+                    {{ article.body|linebreaks }}
+                </div>
+                
+                <!-- Кнопки для автора -->
+                {% if user.is_authenticated and user.id == article.author.id %}
+                <div class="d-flex flex-wrap gap-2 mt-4">
+                    <a class="btn btn-warning btn-sm" 
+                       href="{% url 'articles:article_update' slug=article.slug %}">
+                        Update
+                    </a>
+                    <a class="btn btn-danger btn-sm" 
+                       href="{% url 'articles:article_delete' slug=article.slug %}">
+                        Delete
+                    </a>
+                </div>
+                {% endif %}
+            </div>
         </div>
     </div>
-{%endblock content %}
+</div>
+{% endblock content %}

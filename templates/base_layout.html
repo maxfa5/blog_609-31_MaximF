@@ -17,24 +17,25 @@
 
 <body>
     <div class="navBar">
-        <div class="logo">
+        <div class="logo ">
             <a href="{% url 'homepage' %}"> <img class="main_pic"></img></a>
         </div>
         <div class="navigate">
-            <div class="about_wrapper">
+            <div class="about_wrapper ms-3">
                 <a href="{% url 'about' %}">
                     <div class="about">about</div>
                 </a>
             </div>
-            <div class="Articels_wrapper">
+            
+            <div class="Articels_wrapper ms-3">
                 <a href="{% url 'articles:articlesList' %}">
                     <div class="Articels">Articel List</div>
                 </a>
             </div>
-            
+<!--             
             <div class="signup">
                 <a href="{% url 'accounts:signup' %}">signup</a>
-            </div>
+            </div> -->
 
             {% if user.is_authenticated %}
             <div class="logout_wrapper">
@@ -44,9 +45,19 @@
                 </form>
             </div>
             {% else %}
-            <div class="login_wrapper">
+            <li class="nav-item ms-3">
+                <a class="btn btn-outline-primary btn-sm" href="{% url 'accounts:login' %}">
+                    Login
+                </a>
+            </li>
+            <li class="nav-item ms-3">
+                <a class="btn btn-primary btn-sm" href="{% url 'accounts:signup' %}">
+                    Sign Up
+                </a>
+            </li>
+            <!-- <div class="login_wrapper">
                 <a href="{% url 'accounts:login' %}">Login</a>
-            </div>
+            </div> -->
             {% endif %}
 
         </div>
